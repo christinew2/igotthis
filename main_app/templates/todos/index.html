@@ -22,8 +22,8 @@
                     <div class="cell-container">
                     <span>○ {{todo.name}} </span>
                     <span class='todo-actions'>
-                        <a href="{% url 'todos_update' todo.id %}">Edit</a>
-                        <a href="{% url 'todos_delete' todo.id %}">Delete</a>
+                        <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
+                        <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
                     </span>
                     </div>
                 </td></tr>
@@ -40,8 +40,8 @@
                     <div class="cell-container">
                     <span>○ {{todo.name}} </span>
                     <span class='todo-actions'>
-                        <a href="{% url 'todos_update' todo.id %}">Edit</a>
-                        <a href="{% url 'todos_delete' todo.id %}">Delete</a>
+                        <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
+                        <a class="delete-button" href="{% url 'todos_delete' todo.id %}">Delete</a>
                     </span>
                     </div>
                 </td></tr>
