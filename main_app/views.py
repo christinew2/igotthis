@@ -11,7 +11,7 @@ def about(request):
   return render(request, 'about.html')
 
 def todos_index(request):
-  todos = Todo.objects.all()
+  todos = Todo.objects.filter(user=request.user)
   return render(request, 'todos/index.html', {'todos': todos})
 
 def signup(request):
