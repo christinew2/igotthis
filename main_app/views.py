@@ -4,12 +4,15 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Todo
 
 
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def todos_index(request):
   todos = Todo.objects.filter(user=request.user)
   return render(request, 'todos/index.html', {'todos': todos})
@@ -28,7 +31,7 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
 
-class TodoCreate(CreateView):
+class TodoCreate(LoginRequiredMixin, CreateView):
   model = Todo
   fields = ['name', 'details', 'is_priority', 'is_completed']
 
@@ -36,12 +39,12 @@ class TodoCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class TodoUpdate(UpdateView):
+class TodoUpdate(LoginRequiredMixin, UpdateView):
   model = Todo
   fields = ['details', 'is_priority']
   success_url = '/todos/'
 
-class TodoDelete(DeleteView):
+class TodoDelete(LoginRequiredMixin, DeleteView):
   model = Todo
   success_url = '/todos/'
 
