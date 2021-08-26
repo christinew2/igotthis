@@ -38,6 +38,7 @@ class TodoCreate(LoginRequiredMixin, CreateView):
 
   def form_valid(self, form):
     form.instance.user = self.request.user
+    form.fields['details'].required = False
     return super().form_valid(form)
 
 
