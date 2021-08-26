@@ -1,10 +1,8 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.views import LoginView
 from .models import Todo
 
-
-def home(request):
-    return render(request, 'home.html')
 
 def about(request):
   return render(request, 'about.html')
@@ -29,5 +27,8 @@ class TodoDelete(DeleteView):
 
   def get(self, request, *args, **kwargs):
     return self.post(request, *args, **kwargs)
+  
+class Home(LoginView):
+  template_name = 'home.html'
 
 
