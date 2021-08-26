@@ -2,25 +2,25 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/cat-index.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
 {% endblock  %}
 
 
 {% block content %}
-
+<main>
 <section class="page-header">
     <h1>To Do List</h1>
 </section>
 
-<section class="card-container">
+<section class="table-container">
     <table>
         <thead><tr><th>Priority Items</th></tr></thead>
         <tbody>
             {% for todo in todos %}
             {% if todo.is_priority == True %}
                 <tr><td>
-                    <div>
-                    ○ {{todo.name}}
+                    <div class="cell-container">
+                    <span>○ {{todo.name}} </span>
                     <span class='todo-actions'>
                         <a href="{% url 'todos_update' todo.id %}">Edit</a>
                         <a href="{% url 'todos_delete' todo.id %}">Delete</a>
@@ -37,8 +37,8 @@
             {% for todo in todos %}
             {% if todo.is_priority == False %}
                 <tr><td>
-                    <div>
-                    ○ {{todo.name}}
+                    <div class="cell-container">
+                    <span>○ {{todo.name}} </span>
                     <span class='todo-actions'>
                         <a href="{% url 'todos_update' todo.id %}">Edit</a>
                         <a href="{% url 'todos_delete' todo.id %}">Delete</a>
@@ -51,5 +51,5 @@
     </table>
     
 </section>
-
+</main>
 {% endblock  %}

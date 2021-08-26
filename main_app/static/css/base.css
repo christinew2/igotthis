@@ -17,5 +17,8 @@ html {
       font-size: 62.5%
 }
 
-
-
+body {
+    font-size: 2rem;
+    font-family: 'Assistant', sans-serif;
+    font-weight: 200;
+}
