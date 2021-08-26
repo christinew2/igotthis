@@ -3,12 +3,13 @@
 
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 {% endblock  %}
 
 {% block content %}
 
 <section class="logo-container">
-    <h1>this is where the image would go</h1>
+    <lottie-player src="https://assets7.lottiefiles.com/temp/lf20_hKSrGc.json"  background="transparent"  speed="0.88"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 
 </section>
 {% if not user.is_authenticated %}
