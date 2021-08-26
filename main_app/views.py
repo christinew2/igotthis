@@ -34,10 +34,12 @@ def signup(request):
 class TodoCreate(LoginRequiredMixin, CreateView):
   model = Todo
   fields = ['name', 'details', 'is_priority', 'is_completed']
+  success_url = '/todos/'
 
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
+
 
 class TodoUpdate(LoginRequiredMixin, UpdateView):
   model = Todo
