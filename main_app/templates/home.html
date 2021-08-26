@@ -11,14 +11,15 @@
     <h1>this is where the image would go</h1>
 
 </section>
-<section>
-    <form action="{% url 'home' %}" method="post" class="login">
-        <h1>Log In</h1>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="hidden" name="next" value="{{ next }}">
-        <button type="submit" >Log In!</button>
-    </form>
-</section>
-
+{% if not user.is_authenticated %}
+    <section>
+        <form action="{% url 'home' %}" method="post" class="login">
+            <h1>Log In</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="next" value="{{ next }}">
+            <button type="submit" >Log In!</button>
+        </form>
+    </section>
+{% endif %}
 {% endblock  %}
