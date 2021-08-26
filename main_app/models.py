@@ -11,7 +11,7 @@ class Todo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self-NameError
+        return self.name
 
     # def get_absolute_url(self):
     #     return reverse("todos_detail", kwargs={"todo_id": self.id})
