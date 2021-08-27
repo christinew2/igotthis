@@ -7,12 +7,18 @@
 {% endblock  %}
 
 {% block content %}
-
+<main>
+{% if user.is_authenticated %}
 <section class="logo-container">
-    <lottie-player src="https://assets7.lottiefiles.com/temp/lf20_hKSrGc.json"  background="transparent"  speed="0.88"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    <lottie-player src="https://assets7.lottiefiles.com/temp/lf20_hKSrGc.json"  background="transparent"  speed="0.88"  style="width: 50vw; height: 50vw;"  loop  autoplay></lottie-player>
 
 </section>
+{% endif %}
 {% if not user.is_authenticated %}
+    <section class="logo-container">
+        <lottie-player src="https://assets7.lottiefiles.com/temp/lf20_hKSrGc.json"  background="transparent"  speed="0.88"  style="width: 35vw; height: 35vw;"  loop  autoplay></lottie-player>
+
+    </section>
     <section>
         <form action="{% url 'home' %}" method="post" class="login">
             <h1>Log In</h1>
@@ -23,4 +29,5 @@
         </form>
     </section>
 {% endif %}
+</main>
 {% endblock  %}

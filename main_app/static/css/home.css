@@ -1,0 +1,46 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.logo-container {
+    margin: 0 4rem 0 4rem ;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px; 
+}
+  
+.login h1 {
+    font-size: 4rem;
+    margin: 10px 0 16px 0;
+}
+  
+.login > p {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+  
+.login label {
+    font-size: 2rem;
+    margin-bottom: 7px;
+}
+  
+.login input {
+    font-size: 1.75rem;
+    padding: 2px;
+}
+  
+.login .btn {
+    align-self: flex-end;
+    margin-right: 0;
+    margin-top: 10px;
+}
