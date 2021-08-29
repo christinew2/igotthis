@@ -9,9 +9,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Todo
 
 
-def about(request):
-  return render(request, 'about.html')
-
 @login_required
 def todos_index(request):
   todos = Todo.objects.filter(user=request.user)
