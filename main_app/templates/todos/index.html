@@ -22,20 +22,8 @@
                     <tr class="row-container">
                         <td class="completed">
                             <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
-
-                            <button type="button" class=
-                            "todo-name" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">{{todo.name}}</button>
-                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                            <div class="offcanvas-header">
-                                <h5 id="offcanvasRightLabel">Todo: {{todo.name}}</h5>
-                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-                                Details: {{todo.details}}
-                            </div>
-                            </div>
+                            {% include 'offcanvas.html' %}
                         </td>
-                    
                         <td class='todo-actions' >
                             <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
                             <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
@@ -45,7 +33,7 @@
                     <tr class="row-container">
                         <td>
                             <span><a class="checkbox" href="{% url 'cross_off' todo.id%}">☐</a></span>
-                            {{todo.name}}
+                            {% include 'offcanvas.html' %}
                         </td>
                     
                         <td class='todo-actions' >
@@ -68,7 +56,7 @@
                     <tr class="row-container">
                         <td class="completed">
                             <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
-                            {{todo.name}}
+                            {% include 'offcanvas.html' %}
                         </td>
                     
                         <td class='todo-actions' >
@@ -80,7 +68,7 @@
                     <tr class="row-container">
                         <td>
                             <span><a class="checkbox" href="{% url 'cross_off' todo.id%}">☐</a></span>
-                            {{todo.name}}
+                            {{% include 'offcanvas.html' %}
                         </td>
                     
                         <td class='todo-actions' >
