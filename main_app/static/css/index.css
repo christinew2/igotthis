@@ -9,6 +9,18 @@ h1 {
 	font-size: 3rem;
 }
 
+.about-overlay {
+	opacity: 0;
+	width: 20%;
+	position: absolute;
+	top: 25%;
+	left: 5%;
+}
+
+.about-overlay:hover{
+	opacity: 0.8;
+}
+
 .table-container {
     margin: 1rem 5rem;
     align-items: center;
