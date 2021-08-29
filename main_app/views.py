@@ -56,7 +56,7 @@ class TodoCreate(LoginRequiredMixin, CreateView):
 
 class TodoUpdate(LoginRequiredMixin, UpdateView):
   model = Todo
-  fields = ['details', 'is_priority', 'is_completed']
+  fields = ['name', 'details', 'is_priority', 'is_completed']
   success_url = '/todos/'
 
 class TodoDelete(LoginRequiredMixin, DeleteView):
