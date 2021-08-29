@@ -5,6 +5,10 @@ main {
     max-width: 100%;
 }
 
+h1 {
+	font-size: 3rem;
+}
+
 .table-container {
     margin: 1rem 5rem;
     align-items: center;
