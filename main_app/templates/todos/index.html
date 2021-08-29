@@ -22,7 +22,18 @@
                     <tr class="row-container">
                         <td class="completed">
                             <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
-                            {{todo.name}}
+
+                            <button type="button" class=
+                            "todo-name" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">{{todo.name}}</button>
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 id="offcanvasRightLabel">{{todo.name}}</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                Details: {{todo.details}}
+                            </div>
+                            </div>
                         </td>
                     
                         <td class='todo-actions' >
