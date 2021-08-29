@@ -18,15 +18,32 @@
         <tbody>
             {% for todo in todos %}
             {% if todo.is_priority == True %}
-                <tr><td>
-                    <div class="cell-container">
-                    <span>○ {{todo.name}} </span>
-                    <span class='todo-actions'>
-                        <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
-                        <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
-                    </span>
-                    </div>
-                </td></tr>
+                {% if todo.is_completed %}
+                    <tr class="row-container">
+                        <td class="completed">
+                            <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
+                            {{todo.name}}
+                        </td>
+                    
+                        <td class='todo-actions' >
+                            <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
+                            <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr class="row-container">
+                        <td>
+                            <span><a class="checkbox" href="{% url 'cross_off' todo.id%}">☐</a></span>
+                            {{todo.name}}
+                        </td>
+                    
+                        <td class='todo-actions' >
+                            <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
+                            <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
+                        </td>
+                    </tr>
+
+                {% endif %}
             {% endif %}
             {% endfor %}
         </tbody>

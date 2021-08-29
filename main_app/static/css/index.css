@@ -28,7 +28,7 @@ td {
     padding: 1rem 0;
 }
 
-.cell-container{
+.row-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -75,3 +75,15 @@ td {
 	top:1px;
 }
 
+.completed{
+	text-decoration: line-through;
+}
+
+.checkbox {
+	text-decoration: none;
+    color: inherit;
+}
+
+.checkbox:hover {
+	color: green;
+}

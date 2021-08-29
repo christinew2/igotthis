@@ -31,6 +31,18 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
 
+def cross_off(request, todo_id):
+  todo = Todo.objects.get(id=todo_id)
+  todo.is_completed = True
+  todo.save()
+  return redirect('/todos/')
+
+def uncross_off(request, todo_id):
+  todo = Todo.objects.get(id=todo_id)
+  todo.is_completed = False
+  todo.save()
+  return redirect('/todos/')
+
 class TodoCreate(LoginRequiredMixin, CreateView):
   model = Todo
   fields = ['name', 'details', 'is_priority', 'is_completed']
@@ -44,7 +56,7 @@ class TodoCreate(LoginRequiredMixin, CreateView):
 
 class TodoUpdate(LoginRequiredMixin, UpdateView):
   model = Todo
-  fields = ['details', 'is_priority']
+  fields = ['details', 'is_priority', 'is_completed']
   success_url = '/todos/'
 
 class TodoDelete(LoginRequiredMixin, DeleteView):
