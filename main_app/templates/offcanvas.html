@@ -2,16 +2,16 @@
     type="button" 
     class="todo-name" 
     data-bs-toggle="offcanvas" 
-    data-bs-target="#offcanvasRight" 
+    data-bs-target="#offcanvasRight-{{ forloop.counter }}" 
     aria-controls="offcanvasRight">
-    {{name}}
+    {{todo.name}}
 </button>
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight-{{ forloop.counter }}" aria-labelledby="offcanvasRightLabel-{{ forloop.counter }}">
     <div class="offcanvas-header">
-        <h5 id="offcanvasRightLabel">Todo: {{name}}</h5>
+        <h5 id="offcanvasRightLabel-{{ forloop.counter }}">Todo: {{todo.name}}</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        Details: {{details}}
+        Details: {{todo.details}}
     </div>
 </div>
