@@ -62,3 +62,15 @@ h1 {
 .helptext {
     font-size: 1.5rem;
 }
+
+.signup-lottie {
+    position: absolute;
+    bottom: 10px;
+    right: -65px;
+}
+
+.plant {
+	position: absolute;
+	top: 29%;
+	right: -50px;
+}

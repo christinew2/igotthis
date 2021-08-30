@@ -3,6 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 {% endblock  %}
 
 {% block content %}
@@ -20,5 +21,6 @@
     </table>
     <button type="submit">Submit!</button>
 </form>
+<lottie-player src="https://assets7.lottiefiles.com/packages/lf20_fwevrugd.json"  background="transparent"  speed="1"  style="width: 550px; height: 550px;"  loop  autoplay class="signup-lottie"></lottie-player>
 
 {% endblock  %}

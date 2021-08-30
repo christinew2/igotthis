@@ -3,6 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 {% endblock  %}
 
 {% block content %}
@@ -23,5 +24,9 @@
     </form>
 </section>
 
+<section class="plant">
+    <lottie-player src="https://assets7.lottiefiles.com/temp/lf20_hKSrGc.json"  background="transparent"  speed="0.85"  style="width: 39vw; height: 39vw;"  loop  autoplay></lottie-player>
+
+</section>
 
 {% endblock  %}
