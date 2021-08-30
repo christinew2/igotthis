@@ -74,11 +74,9 @@ td {
 }
 .edit-button:hover {
 	background-color:#faaa55;
+	color:#ffffff;
 }
-.edit-button:active {
-	position:relative;
-	top:1px;
-}
+
 .delete-button {
 	background-color:#ff8282;
 	border-radius:8px;
@@ -92,10 +90,7 @@ td {
 }
 .delete-button:hover {
 	background-color:#f06969;
-}
-.delete-button:active {
-	position:relative;
-	top:1px;
+	color:#ffffff;
 }
 
 .completed{
