@@ -24,16 +24,8 @@ body {
     background-color: #f0e6d4;
 }
 
-header {
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  top: 2rem;
-  left: 2rem;
-}
-
 nav {
-  margin: 0 10px 10px;
+  margin: 20px 10px;
 }
 
 ul {

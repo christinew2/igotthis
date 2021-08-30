@@ -21,56 +21,54 @@
     {% endblock  %}
 </head>
 <body>
-    
-        <nav>
-            <ul>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'home' %}">
-                        <img 
-                            src="{% static 'images/home-tag.png' %}" 
-                            alt="Page marker sticky tag"
-                            class="nav-tag"
-                        >
-                    </li>
-                    <li><a href="{% url 'todos_index' %}">
-                        <img 
-                            src="{% static 'images/index-tag.png' %}" 
-                            alt="Page marker sticky tag"
-                            class="nav-tag"
-                        ></a>
-                    </li>
-                    <li><a href="{% url 'todos_create'  %}">
-                        <img 
-                            src="{% static 'images/add-tag.png' %}" 
-                            alt="Page marker sticky tag"
-                            class="nav-tag"
-                        ></a>
-                    </li>
-                    <li><a href="{% url 'logout' %}">
-                        <img 
-                            src="{% static 'images/logout-tag.png' %}" 
-                            alt="Page marker sticky tag"
-                            class="nav-tag"
-                        ></a>
-                    </li>
-                {% else %}
-                    <li><a href="{% url 'home' %}">
-                        <img 
-                            src="{% static 'images/home-tag.png' %}" 
-                            alt="Page marker sticky tag"
-                            class="nav-tag"
-                        >
-                    </li>
-                    <li><a href="{% url 'signup' %}">
-                        <img 
-                            src="{% static 'images/signup-tag.png' %}" 
-                            alt="Page marker sticky tag"
-                            class="nav-tag"
-                        ></a></li>
-                {% endif %}
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'home' %}">
+                    <img 
+                        src="{% static 'images/home-tag.png' %}" 
+                        alt="Page marker sticky tag"
+                        class="nav-tag"
+                    >
+                </li>
+                <li><a href="{% url 'todos_index' %}">
+                    <img 
+                        src="{% static 'images/index-tag.png' %}" 
+                        alt="Page marker sticky tag"
+                        class="nav-tag"
+                    ></a>
+                </li>
+                <li><a href="{% url 'todos_create'  %}">
+                    <img 
+                        src="{% static 'images/add-tag.png' %}" 
+                        alt="Page marker sticky tag"
+                        class="nav-tag"
+                    ></a>
+                </li>
+                <li><a href="{% url 'logout' %}">
+                    <img 
+                        src="{% static 'images/logout-tag.png' %}" 
+                        alt="Page marker sticky tag"
+                        class="nav-tag"
+                    ></a>
+                </li>
+            {% else %}
+                <li><a href="{% url 'home' %}">
+                    <img 
+                        src="{% static 'images/home-tag.png' %}" 
+                        alt="Page marker sticky tag"
+                        class="nav-tag"
+                    >
+                </li>
+                <li><a href="{% url 'signup' %}">
+                    <img 
+                        src="{% static 'images/signup-tag.png' %}" 
+                        alt="Page marker sticky tag"
+                        class="nav-tag"
+                    ></a></li>
+            {% endif %}
+        </ul>
+    </nav>
     <main>
         {% block content %}
         {% endblock  %}
