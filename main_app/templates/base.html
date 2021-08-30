@@ -15,50 +15,58 @@
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
 		crossorigin="anonymous"
 	>
-    <title>I Got This ToDo App</title>
+    <title>YooDoo To-Do App</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     {% block head %}
     {% endblock  %}
 </head>
 <body>
-    <header>
-        <div class='header-logo-container'>
-            <a href="/">
-                <img 
-                    src="{% static 'images/blue-tag.png' %}" 
-                    alt="Page marker sticky tag"
-                    class="nav-tag"
-                >
-                HOME
-            </a>
-        </div>
+    
         <nav>
             <ul>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'todos_index' %}">
+                    <li><a href="{% url 'home' %}">
                         <img 
-                            src="{% static 'images/red-tag.png' %}" 
+                            src="{% static 'images/home-tag.png' %}" 
                             alt="Page marker sticky tag"
                             class="nav-tag"
-                        >My To-Dos</a>
+                        >
+                    </li>
+                    <li><a href="{% url 'todos_index' %}">
+                        <img 
+                            src="{% static 'images/index-tag.png' %}" 
+                            alt="Page marker sticky tag"
+                            class="nav-tag"
+                        ></a>
                     </li>
                     <li><a href="{% url 'todos_create'  %}">
                         <img 
-                            src="{% static 'images/yellow-tag.png' %}" 
+                            src="{% static 'images/add-tag.png' %}" 
                             alt="Page marker sticky tag"
                             class="nav-tag"
-                        >Add a Todo</a>
+                        ></a>
                     </li>
                     <li><a href="{% url 'logout' %}">
                         <img 
-                            src="{% static 'images/darkblue-tag.png' %}" 
+                            src="{% static 'images/logout-tag.png' %}" 
                             alt="Page marker sticky tag"
                             class="nav-tag"
-                        >Log Out</a>
+                        ></a>
                     </li>
                 {% else %}
-                    <li><a href="{% url 'home' %}">Login</a></li>
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a href="{% url 'home' %}">
+                        <img 
+                            src="{% static 'images/home-tag.png' %}" 
+                            alt="Page marker sticky tag"
+                            class="nav-tag"
+                        >
+                    </li>
+                    <li><a href="{% url 'signup' %}">
+                        <img 
+                            src="{% static 'images/signup-tag.png' %}" 
+                            alt="Page marker sticky tag"
+                            class="nav-tag"
+                        ></a></li>
                 {% endif %}
             </ul>
         </nav>
