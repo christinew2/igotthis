@@ -23,21 +23,46 @@
 <body>
     <header>
         <div class='header-logo-container'>
-            <a href="/">INSERT IMAGE FOR HOME</a>
+            <a href="/">
+                <img 
+                    src="{% static 'images/blue-tag.png' %}" 
+                    alt="Page marker sticky tag"
+                    class="nav-tag"
+                >
+                HOME
+            </a>
         </div>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'todos_index' %}">
+                        <img 
+                            src="{% static 'images/red-tag.png' %}" 
+                            alt="Page marker sticky tag"
+                            class="nav-tag"
+                        >My To-Dos</a>
+                    </li>
+                    <li><a href="{% url 'todos_create'  %}">
+                        <img 
+                            src="{% static 'images/yellow-tag.png' %}" 
+                            alt="Page marker sticky tag"
+                            class="nav-tag"
+                        >Add a Todo</a>
+                    </li>
+                    <li><a href="{% url 'logout' %}">
+                        <img 
+                            src="{% static 'images/darkblue-tag.png' %}" 
+                            alt="Page marker sticky tag"
+                            class="nav-tag"
+                        >Log Out</a>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'home' %}">Login</a></li>
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'todos_index' %}">My To-Dos</a></li>
-                <li><a href="{% url 'todos_create' %}">Add a Todo</a></li>
-                <li><a href="{% url 'logout' %}">Log Out</a></li>
-            {% else %}
-                <li><a href="{% url 'home' %}">Login</a></li>
-                <li><a href="{% url 'signup' %}">Sign Up</a></li>
-            {% endif %}
-        </ul>
-    </nav>
     <main>
         {% block content %}
         {% endblock  %}

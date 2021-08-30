@@ -21,4 +21,37 @@ body {
     font-size: 2rem;
     font-family: 'Assistant', sans-serif;
     font-weight: 200;
+    background-color: #f0e6d4;
+}
+
+header {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  top: 2rem;
+  left: 2rem;
+}
+
+nav {
+  margin: 0 10px 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #FF8281;
+}
+
+.nav-tag {
+  max-width: 160px;
+  z-index: -1;
+  opacity: 0.75;
 }
