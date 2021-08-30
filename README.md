@@ -7,14 +7,14 @@ Sign in and add your to-dos! Then feel the satisfaction of crossing them off as 
 ---
 ## :point_right: [Try Me Out!](https://christinew2-unit4.herokuapp.com/)
 ---
-## :partying_face: Additional Application Screenshots
+## :blush: Additional Application Screenshots
 ![Log-In Page](main_app/static/images/yooDooLogin.png) 
 
 ![Add To-Do Form](main_app/static/images/yooDooAdd.png)
 
 ![OffCanvas Task Details](main_app/static/images/yooDooOffCanvas.png)
 ---
-## :zap: Technologies Used 
+## :star: Technologies Used 
 - HTML
 - CSS
 - Python
@@ -25,7 +25,7 @@ Sign in and add your to-dos! Then feel the satisfaction of crossing them off as 
 - Adobe Photoshop
 
 ---
-## :seedling: Check Out the Journey Here
+## :bulb: Check Out the Journey Here
 - [Trello Board](https://trello.com/b/503BvtG0/unit-4-project)
 - [Wireframes](https://whimsical.com/unit-4-wireframe-PkHFH659GsZzuqJSxCrwrm)
 - [Entity Relationship Diagram (ERD)](https://whimsical.com/unit-4-erd-HanEdZayQJ2BB7gUvXVR1n)
