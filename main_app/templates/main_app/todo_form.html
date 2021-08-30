@@ -7,7 +7,11 @@
 
 {% block content %}
 <section class="form-header">
-    <h1>Add A Todo</h1>
+    {% if object %}
+        <h1>Edit Todo</h1>
+    {% else %}
+        <h1>Add A Todo</h1>
+    {% endif %}
 </section>
 
 <form 
