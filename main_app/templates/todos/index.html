@@ -14,7 +14,7 @@
 
 <section class="about-overlay">
     <h2>Welcome to yooDoo!</h2>
-    <p>Our only goal today is to help you get in the right mindset to tackle all of your daily tasks today! We are so excited for you to take on today! </p>
+    <p>Our only goal today is to help you get in the right mindset to tackle all of your daily tasks! We are so excited for you to take on today! </p>
 </section>
 
 <main>
@@ -33,7 +33,7 @@
                     <tr class="row-container">
                         <td class="completed">
                             <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
-                            {% include 'offcanvas.html' %}
+                            {% include 'offcanvas.html' with name=todo.name details=todo.details %}
                         </td>
                         <td class='todo-actions' >
                             <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
@@ -44,7 +44,7 @@
                     <tr class="row-container">
                         <td>
                             <span><a class="checkbox" href="{% url 'cross_off' todo.id%}">☐</a></span>
-                            {% include 'offcanvas.html' %}
+                            {% include 'offcanvas.html' with name=todo.name details=todo.details %}
                         </td>
                     
                         <td class='todo-actions' >
@@ -67,7 +67,7 @@
                     <tr class="row-container">
                         <td class="completed">
                             <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
-                            {% include 'offcanvas.html' %}
+                            {% include 'offcanvas.html' with name=todo.name details=todo.details %}
                         </td>
                     
                         <td class='todo-actions' >
@@ -79,7 +79,7 @@
                     <tr class="row-container">
                         <td>
                             <span><a class="checkbox" href="{% url 'cross_off' todo.id%}">☐</a></span>
-                            {% include 'offcanvas.html' %}
+                            {% include 'offcanvas.html' with name=todo.name details=todo.details %}
                         </td>
                     
                         <td class='todo-actions' >
