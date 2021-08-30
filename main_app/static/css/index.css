@@ -12,16 +12,25 @@ h1 {
 	font-size: 3rem;
 }
 
+.frame img {
+	position: absolute;
+	top: 315px;
+	left: 40px;
+	z-index: -1;
+	width: 300px;
+}
+
 .about-overlay {
+	background-color: #F3EFB7;
 	opacity: 0;
-	width: 18%;
+	width: 16%;
 	position: absolute;
 	top: 45%;
 	left: 5%;
 }
 
 .about-overlay:hover{
-	opacity: 0.8;
+	opacity: 1;
 }
 
 .table-container {
@@ -125,5 +134,5 @@ td {
 .plant {
 	position: absolute;
 	top: 29%;
-	right: 0px;
+	right: -50px;
 }
