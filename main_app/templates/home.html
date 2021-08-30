@@ -4,19 +4,23 @@
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 {% endblock  %}
 
 {% block content %}
 <main>
 {% if user.is_authenticated %}
-<section class="logo-container">
-    <lottie-player src="https://assets7.lottiefiles.com/temp/lf20_hKSrGc.json"  background="transparent"  speed="0.88"  style="width: 50vw; height: 50vw;"  loop  autoplay></lottie-player>
+<section class="logo-container-big">
+    <h1>Happy Working! You got it! </h1>
+    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_oojuetow.json"  background="transparent"  speed="0.6"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player>
 
 </section>
 {% endif %}
 {% if not user.is_authenticated %}
+
+<main class="login-screen">
     <section class="logo-container">
-        <lottie-player src="https://assets7.lottiefiles.com/temp/lf20_hKSrGc.json"  background="transparent"  speed="0.88"  style="width: 35vw; height: 35vw;"  loop  autoplay></lottie-player>
+        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_oojuetow.json"  background="transparent"  speed="0.5"  style="width: 430px; height: 430px;"  loop  autoplay></lottie-player>
 
     </section>
     <section>
@@ -28,6 +32,7 @@
             <button type="submit" >Log In!</button>
         </form>
     </section>
+</main>
 {% endif %}
 </main>
 {% endblock  %}

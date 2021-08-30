@@ -16,7 +16,7 @@ h1 {
 	opacity: 0;
 	width: 20%;
 	position: absolute;
-	top: 25%;
+	top: 45%;
 	left: 5%;
 }
 
@@ -62,7 +62,6 @@ td {
 }
 
 .edit-button {
-	/* box-shadow: 0px 7px 13px -7px #ffbb0f; */
 	background-color:#ffc663;
 	border-radius:8px;
 	display:inline-block;
@@ -72,7 +71,6 @@ td {
     font-size: 1.5rem;
 	padding:0.75rem 1rem;
 	text-decoration:none;
-	/* text-shadow:0px 0px 0px #ffff00; */
 }
 .edit-button:hover {
 	background-color:#faaa55;
@@ -82,7 +80,6 @@ td {
 	top:1px;
 }
 .delete-button {
-	/* box-shadow: 0px 7px 13px -7px #ffbb0f; */
 	background-color:#ff8282;
 	border-radius:8px;
 	display:inline-block;
@@ -92,7 +89,6 @@ td {
     font-size: 1.5rem;
 	padding:0.75rem 1rem;
 	text-decoration:none;
-	/* text-shadow:0px 0px 0px #ffff00; */
 }
 .delete-button:hover {
 	background-color:#f06969;
