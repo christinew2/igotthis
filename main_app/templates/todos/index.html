@@ -18,86 +18,84 @@
 </section>
 
 <main>
-<img src="{% static 'images/notebookpaper.png' %}" alt="Notebook Paper" class="list-bg">
-<section class="page-header">
-    <h1>To Do List</h1>
-</section>
+    <img src="{% static 'images/notebookpaper.png' %}" alt="Notebook Paper" class="list-bg">
+    <section class="page-header">
+        <h1>To Do List</h1>
+    </section>
+    <section class="table-container">
+        <table>
+            <thead><tr><th>Priority Items</th></tr></thead>
+            <tbody>
+                {% for todo in todos %}
+                {% if todo.is_priority == True %}
+                    {% if todo.is_completed %}
+                        <tr class="row-container">
+                            <td class="completed">
+                                <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
+                                {% include 'offcanvas.html' %}
+                            </td>
+                            <td class='todo-actions' >
+                                <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
+                                <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr class="row-container">
+                            <td>
+                                <span><a class="checkbox" href="{% url 'cross_off' todo.id%}">☐</a></span>
+                                {% include 'offcanvas.html' %}
+                            </td>
+                        
+                            <td class='todo-actions' >
+                                <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
+                                <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
+                            </td>
+                        </tr>
 
-<section class="table-container">
-    <table>
-        <thead><tr><th>Priority Items</th></tr></thead>
-        <tbody>
-            {% for todo in todos %}
-            {% if todo.is_priority == True %}
-                {% if todo.is_completed %}
-                    <tr class="row-container">
-                        <td class="completed">
-                            <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
-                            {% include 'offcanvas.html' %}
-                        </td>
-                        <td class='todo-actions' >
-                            <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
-                            <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
-                        </td>
-                    </tr>
-                {% else %}
-                    <tr class="row-container">
-                        <td>
-                            <span><a class="checkbox" href="{% url 'cross_off' todo.id%}">☐</a></span>
-                            {% include 'offcanvas.html' %}
-                        </td>
-                    
-                        <td class='todo-actions' >
-                            <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
-                            <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
-                        </td>
-                    </tr>
-
+                    {% endif %}
                 {% endif %}
-            {% endif %}
-            {% endfor %}
-        </tbody>
-    </table>
-    <table>
-        <thead><tr><th>Non-Priority Items</th></tr></thead>
-        <tbody>
-            {% for todo in todos %}
-            {% if todo.is_priority == False %}
-                {% if todo.is_completed %}
-                    <tr class="row-container">
-                        <td class="completed">
-                            <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
-                            {% include 'offcanvas.html' %}
-                        </td>
-                    
-                        <td class='todo-actions' >
-                            <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
-                            <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
-                        </td>
-                    </tr>
-                {% else %}
-                    <tr class="row-container">
-                        <td>
-                            <span><a class="checkbox" href="{% url 'cross_off' todo.id%}">☐</a></span>
-                            {% include 'offcanvas.html' %}
-                        </td>
-                    
-                        <td class='todo-actions' >
-                            <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
-                            <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
-                        </td>
-                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table>
+            <thead><tr><th>Non-Priority Items</th></tr></thead>
+            <tbody>
+                {% for todo in todos %}
+                {% if todo.is_priority == False %}
+                    {% if todo.is_completed %}
+                        <tr class="row-container">
+                            <td class="completed">
+                                <span><a class="checkbox" href="{% url 'uncross_off' todo.id%}">☐</a></span>
+                                {% include 'offcanvas.html' %}
+                            </td>
+                        
+                            <td class='todo-actions' >
+                                <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
+                                <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr class="row-container">
+                            <td>
+                                <span><a class="checkbox" href="{% url 'cross_off' todo.id%}">☐</a></span>
+                                {% include 'offcanvas.html' %}
+                            </td>
+                        
+                            <td class='todo-actions' >
+                                <a class="edit-button" href="{% url 'todos_update' todo.id %}">Edit</a>
+                                <a class="delete-button"  href="{% url 'todos_delete' todo.id %}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endif %}
                 {% endif %}
-            {% endif %}
-            {% endfor %}
-        </tbody>
-    </table>  
-</section>
+                {% endfor %}
+            </tbody>
+        </table>  
+    </section>
 </main>
 
 <section class="plant">
     <lottie-player src="https://assets7.lottiefiles.com/temp/lf20_hKSrGc.json"  background="transparent"  speed="0.85"  style="width: 39vw; height: 39vw;"  loop  autoplay></lottie-player>
-
 </section>
 
 {% endblock  %}

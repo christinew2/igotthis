@@ -11,9 +11,11 @@
 <div>
     <h1>Sign Up</h1>
 </div>
+
 {% if error_message %}
     <p>{{error_message}}</p>
 {% endif %}
+
 <form action="" method="post" autocomplete="off" class="form-container">
     {% csrf_token %}
     <table>
@@ -21,6 +23,7 @@
     </table>
     <button type="submit">Submit!</button>
 </form>
+
 <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_fwevrugd.json"  background="transparent"  speed="1"  style="width: 550px; height: 550px;"  loop  autoplay class="signup-lottie"></lottie-player>
 
 {% endblock  %}
