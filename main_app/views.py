@@ -40,6 +40,9 @@ def uncross_off(request, todo_id):
   todo.save()
   return redirect('/todos/')
 
+class Home(LoginView):
+  template_name = 'home.html'
+  
 class TodoCreate(LoginRequiredMixin, CreateView):
   model = Todo
   fields = ['name', 'details', 'is_priority', 'is_completed']
@@ -49,7 +52,6 @@ class TodoCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
     form.fields['details'].required = False
     return super().form_valid(form)
-
 
 class TodoUpdate(LoginRequiredMixin, UpdateView):
   model = Todo
@@ -63,7 +65,5 @@ class TodoDelete(LoginRequiredMixin, DeleteView):
   def get(self, request, *args, **kwargs):
     return self.post(request, *args, **kwargs)
   
-class Home(LoginView):
-  template_name = 'home.html'
 
 
